@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/funds/view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'cart_counter.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+void showToast() {
+  Fluttertoast.showToast(
+      msg: 'You liked this Item!',
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIos: 1,
+      backgroundColor: Colors.grey,
+      textColor: Colors.white);
+}
 
 class CounterWithFavBtn extends StatelessWidget {
   const CounterWithFavBtn({
@@ -22,7 +34,12 @@ class CounterWithFavBtn extends StatelessWidget {
             color: Color(0xFFFF6464),
             shape: BoxShape.circle,
           ),
-          child: SvgPicture.asset("assets/icons/heart.svg"),
+          child: GestureDetector(
+            onTap: () {
+              showToast();
+            },
+            child: SvgPicture.asset("assets/icons/heart.svg"),
+          ),
         )
       ],
     );

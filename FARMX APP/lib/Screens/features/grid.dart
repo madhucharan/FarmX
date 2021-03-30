@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/crop_prediciton/prediction.dart';
 import 'package:flutter_auth/Screens/crop_recommendation/recommendation.dart';
 import 'package:flutter_auth/Screens/fertiliser/fertiliser.dart';
-//import 'package:flutter_auth/Screens/leafdisease/leaf.dart';
+
 import 'package:flutter_auth/Screens/leafdisease/leaf1.dart';
-//import 'package:flutter_auth/Screens/crop_recommendation/recommendation.dart';
+
 import 'package:flutter_auth/Screens/shop/shop.dart';
-//import 'package:flutter_auth/Screens/crop_prediciton/prediction.dart';
+import 'package:flutter_auth/cost_predict/cost.dart';
+import 'package:flutter_auth/funds/funds.dart';
+import 'package:flutter_auth/workwith/work.dart';
 
 class Gridviewfeature extends StatefulWidget {
   @override
@@ -126,7 +128,7 @@ class _GridviewState extends State<Gridviewfeature> {
                     height: 30.0,
                   ),
                   new Text(
-                    'Crop Prediction',
+                    'General Crop Information',
                     style: TextStyle(
                         fontSize: 20.0, color: Colors.lightGreenAccent),
                   ),
@@ -183,7 +185,16 @@ class _GridviewState extends State<Gridviewfeature> {
                 children: <Widget>[
                   new IconButton(
                     icon: new Icon(Icons.work),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return workwith();
+                          },
+                        ),
+                      );
+                    },
                     iconSize: 50.0,
                     color: Colors.purple[400],
                     alignment: Alignment.center,
@@ -211,8 +222,17 @@ class _GridviewState extends State<Gridviewfeature> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   new IconButton(
-                    icon: new Icon(Icons.chat_rounded),
-                    onPressed: () {},
+                    icon: new Icon(Icons.preview_rounded),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return costprediction();
+                          },
+                        ),
+                      );
+                    },
                     iconSize: 50.0,
                     color: Colors.pinkAccent[400],
                     alignment: Alignment.center,
@@ -221,7 +241,7 @@ class _GridviewState extends State<Gridviewfeature> {
                     height: 30.0,
                   ),
                   new Text(
-                    'Chat',
+                    'Cost Predict',
                     style: TextStyle(
                         fontSize: 20.0, color: Colors.pinkAccent[400]),
                   ),
@@ -241,7 +261,16 @@ class _GridviewState extends State<Gridviewfeature> {
                 children: <Widget>[
                   new IconButton(
                     icon: new Icon(Icons.money_rounded),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return invest();
+                          },
+                        ),
+                      );
+                    },
                     iconSize: 50.0,
                     color: Colors.grey[600],
                     alignment: Alignment.center,
@@ -288,7 +317,7 @@ class _GridviewState extends State<Gridviewfeature> {
                     height: 30.0,
                   ),
                   new Text(
-                    'Fertiliser',
+                    'Fertilizer',
                     style: TextStyle(fontSize: 20.0, color: Colors.green[600]),
                   ),
                 ],

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 
@@ -9,16 +10,16 @@ class FBStorage {
     try {
       String fileName = 'images/$postID/postImage';
       FirebaseStorage storage = FirebaseStorage.instance;
-      String url;
-      Reference ref =
-          storage.ref().child("postImage" + DateTime.now().toString());
+      String postImageURL;
+      Reference ref = storage.ref().child(fileName);
       UploadTask uploadTask = ref.putFile(postImageFile);
+      TaskSnapshot takeSnapshot;
       uploadTask.whenComplete(() {
-        url = ref.getDownloadURL() as String;
+        postImageURL = takeSnapshot.ref.getDownloadURL() as String;
       }).catchError((onError) {
         print(onError);
       });
-      return url;
+      return postImageURL;
     } catch (e) {
       return null;
     }

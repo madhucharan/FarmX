@@ -164,7 +164,7 @@ class _WritePost extends State<WritePost> {
                                   width: 450,
                                   height: 450,
                                   scale: 0.8,
-                                  //fit: BoxFit.cover,
+                                  fit: BoxFit.cover,
                                 )
                               : Container(),
                         ],

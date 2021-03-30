@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/leafdisease/viewdetails.dart';
 import 'package:tflite/tflite.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -16,6 +17,7 @@ class _HomeState extends State<Leafdisease1> {
   // variable to store tflite results
   List _output;
 
+  String disease;
   String _confidence;
   // variable to load image
   final picker = ImagePicker();
@@ -50,6 +52,8 @@ class _HomeState extends State<Leafdisease1> {
       _confidence = _output != null
           ? (_output[0]['confidence'] * 100.0).toString().substring(0, 2) + "%"
           : " ";
+
+      disease = _output[0]['label'];
     });
     print("prediction: $_output");
   }
@@ -128,7 +132,6 @@ class _HomeState extends State<Leafdisease1> {
                       width: 280,
                       child: Column(
                         children: [
-                          //Image.asset('assets/images/leafimage.jpeg'),
                           SizedBox(
                             height: 50,
                           )
@@ -160,7 +163,27 @@ class _HomeState extends State<Leafdisease1> {
                                 )
                               : Container(),
                           SizedBox(
-                            height: 10,
+                            height: 5,
+                          ),
+                          FlatButton(
+                            color: Colors.green,
+                            onPressed: () {
+                              /*setState(() {
+                                _viewdetails(disease);
+                              });*/
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return viewdetails(disease);
+                                  },
+                                ),
+                              );
+                            },
+                            child: new Text(
+                              'View Details',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           )
                         ],
                       ),
@@ -211,6 +234,27 @@ class _HomeState extends State<Leafdisease1> {
               ),
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class viewdetails extends StatelessWidget {
+  String dis;
+  viewdetails(String disease) {
+    dis = disease;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: new AppBar(
+        title: new Text('Details of the disease'),
+      ),
+      body: new Container(
+        child: new Text(
+          disease_dic[dis],
         ),
       ),
     );

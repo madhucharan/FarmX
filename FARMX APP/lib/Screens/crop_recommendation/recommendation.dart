@@ -27,15 +27,18 @@ class _riskState extends State<recommendation> {
   Future<String> predictCrop(var body) async {
     var client = new http.Client();
     var uri =
-        Uri.parse("https://farmx-crop-recommendation.herokuapp.com/predict");
+        Uri.parse("https://farmx-crop-recommendation.herokuapp.com/croprec");
     Map<String, String> headers = {"Content-type": "application/json"};
     String jsonString = json.encode(body);
+    print(jsonString);
     try {
       var resp = await http.post(uri, headers: headers, body: jsonString);
+      print(resp.statusCode);
       if (resp.statusCode == 200) {
         print("DATA FETCHED SUCCESSFULLY");
         var result = json.decode(resp.body);
-        print(result["prediction"]);
+        print(result);
+        print(result['prediction']);
         return result["prediction"];
       } else if (resp.statusCode == 405) {
         print("405 status code");
@@ -54,7 +57,7 @@ class _riskState extends State<recommendation> {
     return Scaffold(
         backgroundColor: Colors.blueGrey[200],
         appBar: AppBar(
-          title: Text('Crop Prediction'),
+          title: Text('Crop Recommendation'),
           backgroundColor: Colors.blueAccent[400],
           actions: [],
         ),
@@ -101,7 +104,7 @@ class _riskState extends State<recommendation> {
                           }
                         },
                         decoration: InputDecoration(
-                            labelText: 'Phosphorous',
+                            labelText: 'Phosphate',
                             hintText: 'Enter a Value.',
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20.0))),

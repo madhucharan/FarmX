@@ -57,7 +57,7 @@ class _riskState extends State<recommendation> {
     return Scaffold(
         backgroundColor: Colors.blueGrey[200],
         appBar: AppBar(
-          title: Text('Crop Recommendation'),
+          title: Text('Crop Suggestion'),
           backgroundColor: Colors.blueAccent[400],
           actions: [],
         ),

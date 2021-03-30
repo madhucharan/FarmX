@@ -78,7 +78,7 @@ class _riskState extends State<fertiliser_predict> {
     return Scaffold(
         backgroundColor: Colors.blueGrey[200],
         appBar: AppBar(
-          title: Text('Fertiliser Prediction'),
+          title: Text('Fertilizer Prediction'),
           backgroundColor: Colors.green[600],
           actions: [],
         ),

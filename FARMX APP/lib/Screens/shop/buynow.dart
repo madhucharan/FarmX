@@ -28,7 +28,7 @@ class Buynow extends StatelessWidget {
           children: [
             Center(
                 child: Text(
-                    'Here are your items seleted , chick the button to proceed')),
+                    'Here are your items seleted , click the button to proceed')),
             Center(
                 child: RaisedButton(
               color: Colors.purple[200],

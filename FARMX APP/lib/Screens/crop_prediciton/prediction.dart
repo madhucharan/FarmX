@@ -89,7 +89,7 @@ class _weatherState extends State<prediction> {
     return Scaffold(
         backgroundColor: Colors.blueGrey[200],
         appBar: AppBar(
-          title: Text('Crop Prediction'),
+          title: Text('General Crop Information'),
           backgroundColor: Colors.green[400],
           actions: [],
         ),

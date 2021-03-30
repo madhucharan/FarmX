@@ -90,9 +90,9 @@ class _GridviewState extends State<Gridviewfeature> {
                     height: 30.0,
                   ),
                   new Text(
-                    'Crop Recommendation',
+                    'Crop Suggestion',
                     style: TextStyle(
-                        fontSize: 20.0, color: Colors.lightBlueAccent),
+                        fontSize: 18.0, color: Colors.lightBlueAccent),
                   ),
                 ],
               ),
@@ -128,9 +128,9 @@ class _GridviewState extends State<Gridviewfeature> {
                     height: 30.0,
                   ),
                   new Text(
-                    'General Crop Information',
+                    'General Crop Info',
                     style: TextStyle(
-                        fontSize: 20.0, color: Colors.lightGreenAccent),
+                        fontSize: 20.0, color: Colors.black),
                   ),
                 ],
               ),

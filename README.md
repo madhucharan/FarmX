@@ -22,7 +22,7 @@ But Are we giving utmost importance and support to the agriculture and farming? 
 
 ## Installation 
 
-- Make sure to install flutter in your pc and check by running the below command on Command Line to ensure everything is perfectly installed
+- Make sure to install flutter in your pc and check by running the below commands on command prompt to ensure everything is perfectly installed.
 ```
 flutter doctor
 ```

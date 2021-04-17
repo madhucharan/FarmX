@@ -59,5 +59,5 @@ All the Deployment Related Code Can be found at [**Farmx-Model-Deployment-Repo**
 - [Pranathi](https://github.com/pranathi1106)
 
 ### End Note
-This project was made as a part of Google Solution Challenge 2021. Feel Free to suggest improvements and raise issues if any. Reach out to me at [@MadhuCharanM](https://twitter.com/MadhuCharanM) to discuss further if needed.
+This project was made as a part of Google Solution Challenge 2021. Feel Free to suggest improvements and raise issues if any. Reach out to me at [@themadhucharan](https://twitter.com/themadhucharan) to discuss further if needed.
 
